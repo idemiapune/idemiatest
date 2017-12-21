@@ -1,0 +1,31 @@
+(1.) Create RestFul endpoint/s for managing (CRUD) a resource as below in
+MySQL database named 'idemiatest':
+
+      SaleItem
+         - itemName
+         - price (in INR)
+         - percentDiscount
+         
+(2.) Create another RestFul endpoint with the purpose of creating a view
+which will use above resource named SaleItem in the database to
+present below
+      
+      Input: http://localhost:8080/saleitem/details/{id}
+      
+      Output:
+      
+      {
+         "itemName":"",
+         "price-in-INR":"",
+         "discountAmount-in-INR":"",
+         "payableAmountAfterDiscount-in-INR":"",
+         "payableAmountAfterDiscount-in-USD":""
+      }
+      
+ Note: On the server side fetch the INR -> USD conversion rate dynamically 
+ from a RestFul endpoint http://10.72.6.70:8080/getusdconvrate (httpMethod: GET)
+ Use some RestFul library to develop a client OR use plain httpClient/URL Connection
+ to fetch this data. Feel free to google out.
+ e.g. https://spring.io/guides/gs/consuming-rest/
+ OR
+ https://alvinalexander.com/blog/post/java/java-how-read-from-url-string-text
